@@ -1,0 +1,11 @@
+include ../helpers/mixins
+include ../helpers/variables
+
+html
+    include ../partials/head
+    body
+        .main.mdl-layout.mdl-layout--fixed-header.mdl-js-layout
+            include ../partials/header
+                
+            .mdl-layout__content
+                block content
