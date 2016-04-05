@@ -1,0 +1,110 @@
+extends ../layouts/red
+
+block head
+    - var pageTitle = "Buy"
+    - var title = "Мои покупки"
+
+block content
+    .mdl-grid
+        .mdl-cell
+            .card.mdl-card.mdl-shadow--2dp
+                .invoice-header.card__title.mdl-card__title
+                    .mdl-grid.mdl-grid--no-spacing
+                        .mdl-cell
+                            .invoice-header__descr.mdl-card__subtitle-text Чек №2 от 19.23.2016
+                                
+                        .mdl-cell
+                            h2.mdl-card__title-text.align-center Мои покупки
+        
+                .item-container
+                    .item
+                        .item__cell.item__cell--img: img(src="")
+                        .item__cell.item__cell--pl-10.item--bold.item--nw
+                            span 6
+                            = " "
+                            | x
+                        .item__cell.item__cell--pl-10.item__cell--pr-10 Молоко пастеризованное "ЭтоЛето" 3,3-4% 0,75л
+                        .item__cell.item--bold 812.00 (-18.00)
+                        .item__divider
+        
+                    .item
+                        .item__cell.item__cell--img: img(src="")
+                        .item__cell.item__cell--pl-10.item--bold.item--nw 6 x
+                        .item__cell.item__cell--pl-10.item__cell--pr-20 Молоко пастеризованное "ЭтоЛето" 3,3-4% 0,75л
+                        .item__cell.item--bold 812.00 (-18.00)
+                        .item__divider
+        
+                .invoice-footer
+                    .mdl-card__actions
+    
+                        ul.invoice-list
+                            li.invoice-list__item
+                                span Скидка
+                                .mdl-layout-spacer
+                                span 321
+                                
+                            li.invoice-list__item
+                                span Итого
+                                .mdl-layout-spacer
+                                span 3214
+                                
+                        
+                        button.invoice-action.mdl-button.mdl-js-button.mdl-button--accent(type="button")
+                            .material-icons sms_failed
+                            | Отзыв
+                        
+                        button.invoice-action.mdl-button.mdl-js-button.mdl-button--accent(type="button")
+                            .material-icons share
+                            | Отправить
+                     
+        .mdl-cell
+            .card.mdl-card.mdl-shadow--2dp
+                .invoice-header.card__title.mdl-card__title
+                    .mdl-grid.mdl-grid--no-spacing
+                        .mdl-cell
+                            .invoice-header__descr.mdl-card__subtitle-text Чек №2 от 19.23.2016
+                                
+                        .mdl-cell
+                            h2.mdl-card__title-text.align-center Мои покупки
+        
+                .item-container
+                    .item
+                        .item__cell.item__cell--img: img(src="")
+                        .item__cell.item__cell--pl-10.item--bold.item--nw
+                            span 6
+                            = " "
+                            | x
+                        .item__cell.item__cell--pl-10.item__cell--pr-10 Молоко пастеризованное "ЭтоЛето" 3,3-4% 0,75л
+                        .item__cell.item--bold 812.00 (-18.00)
+                        .item__divider
+        
+                    .item
+                        .item__cell.item__cell--img: img(src="")
+                        .item__cell.item__cell--pl-10.item--bold.item--nw 6 x
+                        .item__cell.item__cell--pl-10.item__cell--pr-10 Молоко пастеризованное "ЭтоЛето" 3,3-4% 0,75л
+                        .item__cell.item--bold 812.00 (-18.00)
+                        .item__divider
+        
+                .invoice-footer
+                    .mdl-card__actions
+    
+                        ul.invoice-list
+                            li.invoice-list__item
+                                span Скидка
+                                .mdl-layout-spacer
+                                span 321
+                                
+                            li.invoice-list__item
+                                span Итого
+                                .mdl-layout-spacer
+                                span 3214
+                                
+                        
+                        button.invoice-action.mdl-button.mdl-js-button.mdl-button--accent(type="button")
+                            .material-icons sms_failed
+                            | Отзыв
+                        
+                        button.invoice-action.mdl-button.mdl-js-button.mdl-button--accent(type="button")
+                            .material-icons share
+                            | Отправить
+                     

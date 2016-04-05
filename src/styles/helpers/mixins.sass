@@ -1,0 +1,40 @@
+@mixin size($width, $height: $width)
+  width: $width
+  height: $height
+
+@mixin transition($rules: "all", $duration: 0.3)
+
+  @if $rules == "all"
+    transition: $rules #{$duration}s ease
+  @else
+    $transitions: ()
+    $change: ()
+    @each $rule in $rules
+      $transitions-rule: $rule #{$duration}s ease
+      $transitions: append($transitions, $transitions-rule, comma)
+      $change: append($change, $rule, comma)
+    transition: $transitions
+    will-change: $change
+    
+%v-align
+  position: absolute
+  top: 50%
+  transform: translateY(-50%)
+
+%h-align
+  position: absolute
+  left: 50%
+  transform: translateX(-50%)
+
+%vh-align
+  position: absolute
+  left: 50%
+  top: 50%
+  transform: translate(-50%, -50%)
+
+%clearfix
+
+  &:after
+    content: ''
+    display: table
+    clear: both

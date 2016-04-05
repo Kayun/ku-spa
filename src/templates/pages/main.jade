@@ -1,0 +1,90 @@
+extends ../layouts/green
+
+block head
+    - var pageTitle = "Main"
+
+block content
+    .mdl-grid
+
+        .mdl-cell.mdl-cell--4-col-phone.mdl-cell--4-col-tablet
+            .card.card--barcode.mdl-card.mdl-shadow--2dp
+                img(src="")
+
+        .mdl-cell.mdl-cell--4-col-phone.mdl-cell--4-col-tablet
+            .card.card--user.mdl-card.mdl-shadow--2dp
+                
+                i.avatar.material-icons.md-light account_box
+
+        .mdl-cell.mdl-cell--4-col-phone.mdl-cell--4-col-tablet
+            .card.mdl-card.mdl-shadow--2dp
+                .card__title.mdl-card__title
+                    h2.mdl-card__title-text Мои покупки
+
+                .item-container
+                    .item
+                        .item__cell.item__cell--img: img(src="")
+                        .item__cell.item__cell--pl-10.item--bold.item--nw
+                            span 6
+                            = " "
+                            | x
+                        .item__cell.item__cell--pl-10.item__cell--pr-10 Молоко пастеризованное "ЭтоЛето" 3,3-4% 0,75л
+                        .item__cell.item--bold 812.00
+                        .item__divider
+
+                    .item
+                        .item__cell.item__cell--img: img(src="")
+                        .item__cell.item__cell--pl-10.item--bold.item--nw 6 x
+                        .item__cell.item__cell--pl-10.item__cell--pr-10 Молоко пастеризованное "ЭтоЛето" 3,3-4% 0,75л
+                        .item__cell.item--bold 812.00
+                        .item__divider
+
+                .mdl-card__actions.align-center
+                    button.mdl-button.mdl-js-button.mdl-button--accent(type="button") Показать все
+
+        .mdl-cell.mdl-cell--4-col-phone.mdl-cell--4-col-tablet
+            .card.mdl-card.mdl-shadow--2dp
+                .card__title.mdl-card__title
+                    h2.mdl-card__title-text Акции
+
+                .item-container
+
+                    .item
+                        .item__cell.item__cell--img: img(src="")
+                        .item__cell.item__cell--pl-10.item--bold
+                            | Скидка 10% при покупке алкоголя на сумму от 3000 рублей
+                            .item__note Проходит с 21.02
+
+                    .item
+                        .item__cell.item__cell--img: img(src="")
+                        .item__cell.item__cell--pl-10.item--bold
+                            | Скидка на сигареты блоками
+                            .item__note Проходит с 21.02
+
+                .mdl-card__actions.align-center
+                    button.mdl-button.mdl-js-button.mdl-button--accent(type="button") Показать все
+
+        .mdl-cell.mdl-cell--4-col-phone.mdl-cell--4-col-tablet
+            .card.mdl-card.mdl-shadow--2dp
+                .card__title.mdl-card__title
+                    h2.mdl-card__title-text Магазины
+
+                .item-container
+
+                    .item
+                        .item__cell.item__cell--img
+                            .item__place.material-icons place
+
+                        .item__cell.item__cell--pl-10.item--bold
+                            | Мой магазин
+                            .item__note Москва, Ленинский проспект, дом 1
+
+                    .item
+                        .item__cell.item__cell--img
+                            .item__place.material-icons place
+
+                        .item__cell.item__cell--pl-10.item--bold
+                            | Магазин 1 (дисконт)
+                            .item__note Москва, Ветошный переулок, дом 2
+
+                .mdl-card__actions.align-center
+                    button.mdl-button.mdl-js-button.mdl-button--accent(type="button") Показать все

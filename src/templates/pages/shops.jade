@@ -1,0 +1,40 @@
+extends ../layouts/red
+
+block head
+    - var pageTitle = "Shops"
+    - var title = "Магазины"
+
+block content
+    .mdl-grid
+        .mdl-cell.mdl-cell--4-col-phone.mdl-cell--4-col-tablet
+
+            .item.item--w-100p
+                .item__cell.item__cell--img
+                    .item__place.material-icons place
+                        
+                .item__cell.item__cell--pl-10.item--bold
+                    | Мой магазин
+                    .item__note Москва, Ленинский проспект, дом 1
+
+
+            .item.item--w-100p
+                .item__cell.item__cell--img
+                    .item__place.material-icons place
+                        
+                .item__cell.item__cell--pl-10.item--bold
+                    | Мой магазин
+                    .item__note Москва, Ленинский проспект, дом 1
+                        
+
+            .item.item--w-100p
+                .item__cell.item__cell--img
+                    .item__place.material-icons place
+                        
+                .item__cell.item__cell--pl-10.item--bold
+                    | Мой магазин
+                    .item__note Москва, Ленинский проспект, дом 1
+                        
+block footer
+    button.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--accent.mdl-button--colored.width-100p(type="button")
+        | На карте
+

@@ -1,0 +1,16 @@
+extends ../layouts/enter
+
+block head
+    - var pageTitle = "Registration"
+    - var enterName = "Выберите способ входа"
+
+block content
+    .mdl-cell.mdl-cell--middle.mdl-cell--4-col-phone.mdl-cell--4-col-tablet
+        .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.width-100p
+            input.mdl-textfield__input(type="email", name="email" id="email")
+            label.mdl-textfield__label(for="email") E-mail
+            span.mdl-textfield__error Некорректный адрес электронной почты
+
+    .mdl-cell.mdl-cell--middle.mdl-cell--4-col-phone.mdl-cell--4-col-tablet
+        button.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored.width-100p(type="submit") Войти
+

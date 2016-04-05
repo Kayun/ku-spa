@@ -1,0 +1,21 @@
+include ../helpers/mixins
+include ../helpers/variables
+
+html
+    include ../partials/head
+    body
+        .main.mdl-layout.mdl-layout--fixed-header.mdl-js-layout.mdl-layout--no-drawer-button
+            
+            header.header.mdl-layout__header
+                .mdl-layout__header-row
+                    .header__title.header__title.mdl-layout__title Ku
+
+            main.enter.mdl-layout__content
+                form.mdl-grid
+                    .mdl-cell.mdl-cell--middle.mdl-cell--4-col-phone.mdl-cell--8-col-tablet
+                        h6.enter__title.align-center= enterName
+                       
+                    .mdl-cell.mdl-cell--middle.mdl-cell--4-col-phone.mdl-cell--8-col-tablet
+                        .mdl-grid
+                            block content
+

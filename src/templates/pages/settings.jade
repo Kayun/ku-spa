@@ -1,0 +1,30 @@
+extends ../layouts/red
+
+block head
+    - var pageTitle = "Settings"
+    - var title = "Ку! Мобильные привилегии"
+
+block content
+    ul.mdl-list
+        
+        .mdl-list__item
+            span.mdl-list__item-primary-content Получать SMS
+            
+            .mdl-list__item-secondary-action
+                label.mdl-switch.mdl-js-switch.mdl-js-ripple-effect(for="list-switch-1")
+                    input(type="checkbox" id="list-switch-1" class="mdl-switch__input" checked)
+        
+        .mdl-list__item
+            span.mdl-list__item-primary-content Получать E-mail
+            
+            .mdl-list__item-secondary-action
+                label.mdl-switch.mdl-js-switch.mdl-js-ripple-effect(for="list-switch-2")
+                    input(type="checkbox" id="list-switch-2" class="mdl-switch__input" checked)
+        
+        .mdl-list__item
+            span.mdl-list__item-primary-content Получать Push-сообщения
+            
+            .mdl-list__item-secondary-action
+                label.mdl-switch.mdl-js-switch.mdl-js-ripple-effect(for="list-switch-3")
+                    input(type="checkbox" id="list-switch-3" class="mdl-switch__input" checked)
+

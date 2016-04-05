@@ -1,0 +1,28 @@
+extends ../layouts/red
+
+mixin list(lis)
+    ul.mdl-list
+        each li in lis
+            li.mdl-list__item
+                .mdl-list__item-primary-content= li[0]
+                a.mdl-list__item-secondary-action(href= li[1])= li[1]
+        
+
+block head
+    - var pageTitle = "List"
+    - var title = "Список страниц"
+
+block content
+    +list([
+        ["Регистрация", "registration.html"],
+        ["Регистрация через почту", "email.html"],
+        ["Регистрация кода", "code.html"],
+        ["Профиль", "profile.html"],
+        ["Главная", "main.html"],
+        ["Мои покупки", "buy.html"],
+        ["Акции", "shares.html"],
+        ["Магазины", "shops.html"],
+        ["Сообщения", "messages.html"],
+        ["Настройки", "settings.html"]
+    ])
+        
