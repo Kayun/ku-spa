@@ -1,0 +1,64 @@
+.item
+  position: relative
+  width: 100%
+  display: table
+  table-layout: auto
+  padding: 0 20px
+  line-height: 14px
+  
+  &-container
+    padding-top: 8px
+  
+  img
+    @include size(50px)
+    
+  &__note
+    padding-top: 5px
+    font:
+      style: italic
+      weight: 400
+      size: 12px
+      
+  &__place
+    font-size: 40px
+    color: $color-orange
+  
+  &__cell
+    padding: 10px 0
+    display: table-cell
+    vertical-align: middle
+    font-size: 12px
+    
+    &--pl-10
+      padding-left: 10px
+    
+    &--pr-10
+      padding-right: 10px
+      
+    &--img
+      width: 40px
+      
+  &:not(:last-child)
+
+    &:after
+      position: absolute
+      bottom: 0
+      left: 20px
+      width: calc(100% - 40px)
+      height: 1px
+      content: ''
+      background-color: rgba(#000, .3)
+    
+  &--bold
+    font-weight: 700
+    font-size: 14px
+    
+  &--nw
+    white-space: nowrap
+
+  &--w-100p
+    padding: 0
+
+    &:after
+      left: 0 !important
+      width: 100% !important

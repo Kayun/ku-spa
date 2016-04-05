@@ -1,0 +1,54 @@
+extends ../layouts/profile
+
+block head
+    - var pageTitle = "Profile"
+    - var title = "Профиль"
+        
+block content
+    form.mdl-grid(action= jv0)
+        .mdl-cell.mdl-cell--4-col-phone.mdl-cell--4-col-tablet
+            .input-field.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+                input.mdl-textfield__input(type="text", name="firtsName" id="firtsName")
+                label.mdl-textfield__label(for="firtsName") Ваше имя
+                
+        .mdl-cell.mdl-cell--4-col-phone.mdl-cell--4-col-tablet
+            .input-field.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+                input.mdl-textfield__input(type="text", name="lastName" id="lastName")
+                label.mdl-textfield__label(for="lastName") Ваша фамилия
+                
+        .mdl-cell.mdl-cell--4-col-phone.mdl-cell--4-col-tablet
+            .input-field.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+                input.mdl-textfield__input(type="text", name="middleName" id="middleName")
+                label.mdl-textfield__label(for="middleName") Ваше отчество
+                
+        .mdl-cell.mdl-cell--4-col-phone.mdl-cell--4-col-tablet
+            .input-field.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+                input.mdl-textfield__input(type="email", name="email" id="email")
+                label.mdl-textfield__label(for="email") Ваш e-mail
+                span.mdl-textfield__error Некорректный адрес электронной почты
+                
+        // TODO: формат телефона
+        .mdl-cell.mdl-cell--4-col-phone.mdl-cell--4-col-tablet
+            .input-field.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+                input.mdl-textfield__input(type="tel", name="phone" id="phone")
+                label.mdl-textfield__label(for="phone") Ваш номер телефона
+                span.mdl-textfield__error Некорректный номер телефона
+        
+        // TODO: формат даты
+        .mdl-cell.mdl-cell--4-col-phone.mdl-cell--4-col-tablet
+            .input-field.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+                input.mdl-textfield__input(type="text", name="birthday" id="birthday")
+                label.mdl-textfield__label(for="birthday") Ваш День рождения
+        
+        .mdl-cell.mdl-cell--4-col-phone.mdl-cell--4-col-tablet
+            .input-field.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+                .mdl-selectfield
+                    select(name="sex" id="sex")
+                        option(value="" disabled selected style="display: none")
+                        option(value="1") Мужской
+                        option(value="1") Женский
+                        
+                    label.mdl-textfield__label(for="sex") Ваш пол
+            
+        .mdl-cell.mdl-cell--stretch.mdl-cell--4-col-phone.mdl-cell--8-col-tablet.align-center
+            button.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored(type="submit") Сохранить
