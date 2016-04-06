@@ -44,6 +44,7 @@ $RECYCLE.BIN/
 # Windows Installer files
 *.cab
 *.msi
+/public_html
 *.msm
 *.msp
 
