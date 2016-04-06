@@ -11,7 +11,7 @@ module.exports = {
   },
 
   output: {
-    path: __dirname + '/public/assets/scripts',
+    path: __dirname + '/public_html/assets/scripts',
     filename: '[name].min.js',
     library: '[name]'
   },
@@ -25,7 +25,7 @@ module.exports = {
       path.join(__dirname, 'src/scripts'),
       path.join(__dirname, 'src/templates')
     ],
-    extensions: ['', '.js', '.slm'],
+    extensions: ['', '.js', '.jade'],
     alias: {}
   },
 
