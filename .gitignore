@@ -46,6 +46,8 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 /public
+/public_html
+*.msm
 *.msp
 
 # Windows shortcuts
