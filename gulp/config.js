@@ -1,15 +1,19 @@
 const src = 'src';
-const dist = 'public';
+const dist = 'public_html';
 const assets = 'assets';
 const styles = 'styles';
+const scripts = 'scripts';
 const templates = 'templates';
+const images = 'templates';
 
 const path = {
   src: `./${src}/`,
   dist: `./${dist}/`,
   assets: `./${dist}/${assets}/`,
   styles: `./${src}/${styles}/`,
-  templates: `./${src}/${templates}/`
+  scripts: `./${src}/${scripts}/`,
+  templates: `./${src}/${templates}/`,
+  images: `./${src}/${images}/`
 };
 
 module.exports = {
