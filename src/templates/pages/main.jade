@@ -12,9 +12,24 @@ block content
                 img(src="")
 
         .mdl-cell.mdl-cell--4-col-phone.mdl-cell--4-col-tablet
-            .card.card--user.mdl-card.mdl-shadow--2dp
+            .card.card--user.mdl-card.mdl-shadow--2dp(style="flex-direction: row;")
                 
                 i.avatar.material-icons.md-light perm_identity
+                ul.avatar-info
+                    li
+                        | Имя Фамилия
+                    li
+                        | Мои накопления:
+                        = " "
+                        strong 1235
+                    li
+                        | Мои баллы:
+                        = " "
+                        strong 123
+                    li
+                        | В программе с:
+                        = " "
+                        strong 23.12.2016
 
         .mdl-cell.mdl-cell--4-col-phone.mdl-cell--4-col-tablet
             .card.mdl-card.mdl-shadow--2dp
