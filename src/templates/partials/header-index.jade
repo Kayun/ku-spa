@@ -1,9 +1,13 @@
-header.header.mdl-layout__header.mdl-layout__header--seamed
+header.header.mdl-layout__header.mdl-layout__header--seamed.js-header
     .mdl-layout-icon
         .header__back.material-icons.js-back arrow_back
 
     .mdl-layout__header-row
         .mdl-layout-spacer
         .material-icons add
-        .header__more.material-icons more_vert
+        button#menu.header__more.mdl-button.mdl-js-button.mdl-button--icon
+            i.material-icons more_vert
+            
+        ul.mdl-menu.mdl-menu--bottom-right.mdl-js-menu.mdl-js-ripple-effect(for="menu")
+            li.mdl-menu__item Пункт меню
 

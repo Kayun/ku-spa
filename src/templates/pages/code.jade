@@ -5,10 +5,14 @@ block head
     - var enterName = "Введите номер приглашения для добавления нового магазина"
 
 block content
-    .mdl-cell.mdl-cell--middle
+    .mdl-cell.mdl-cell--middle.mdl-cell--3-col-phone
         .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.width-100p
             input.mdl-textfield__input(type="test", name="code" id="code")
             label.mdl-textfield__label(for="code") Код приглашения
+            
+    .mdl-cell.mdl-cell--middle.mdl-cell--1-col-phone
+        button.enter__scan.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored.width-100p(type="button")
+            .material-icons camera_alt
 
     .mdl-cell.mdl-cell--middle
         button.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored.width-100p(type="submit") Готово

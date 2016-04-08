@@ -35,20 +35,43 @@ block content
                 span.mdl-textfield__error Некорректный номер телефона
         
         // TODO: формат даты
-        .mdl-cell.mdl-cell--4-col-phone.mdl-cell--4-col-tablet
-            .input-field.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
-                input.mdl-textfield__input(type="text", name="birthday" id="birthday")
-                label.mdl-textfield__label(for="birthday") Ваш День рождения
-        
-        .mdl-cell.mdl-cell--4-col-phone.mdl-cell--4-col-tablet
-            .input-field.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
-                .mdl-selectfield
-                    select(name="sex" id="sex")
-                        option(value="" disabled selected style="display: none")
-                        option(value="1") Мужской
-                        option(value="1") Женский
+        .mdl-cell.mdl-cell--4-col-phone.mdl-cell--4-col-tablet(style="position: relative")
+            .input__label.mdl-textfield__label Ваш День рождения
+            .input-container
+                .input-field.input-field--25p.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+                    .mdl-selectfield
+                        select(name="day")
+                            option(value="" disabled selected style="display: none") День
+                            option 1
+                            option 2
+                            option 3
+                            option 4
+                            option 5
+                            option 6
+                    
+                .input-field.input-field--40p.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+                    .mdl-selectfield
+                        select(name="month")
+                            option(value="" disabled selected style="display: none") Месяц
+                            option(value="1") Мужской
+                            option(value="1") Женский
+                    
+                .input-field.input-field--25p.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+                    .mdl-selectfield
+                        select(name="year")
+                            option(value="" disabled selected style="display: none") Год
+                            option(value="1") Мужской
+                            option(value="1") Женский
                         
-                    label.mdl-textfield__label(for="sex") Ваш пол
+        .mdl-cell.mdl-cell--4-col-phone.mdl-cell--4-col-tablet(style="position: relative")
+            .input__label.mdl-textfield__label Пол
+            .input-container
+                .input-field.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+                    .mdl-selectfield
+                        select(name="sex" id="sex")
+                            option(value="" disabled selected style="display: none") Не указано
+                            option(value="1") Мужской
+                            option(value="1") Женский
             
         .mdl-cell.mdl-cell--stretch.mdl-cell--4-col-phone.mdl-cell--8-col-tablet.align-center
             button.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored(type="submit") Сохранить
