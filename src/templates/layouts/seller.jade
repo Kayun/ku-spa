@@ -1,0 +1,19 @@
+include ../helpers/mixins
+include ../helpers/variables
+
+html
+    include ../partials/head
+    body
+        .main.mdl-layout.mdl-layout--fixed-header.mdl-js-layout.mdl-layout--no-drawer-button
+
+            header.header.mdl-layout__header
+                .mdl-layout__header-row
+                    .header__title.header__title.mdl-layout__title Ку! Мобильные привилегии
+
+            main.mdl-layout__content
+                h6.seller-title Мои магазины
+                form.mdl-grid
+                    block content
+            
+            footer.footer.mdl-mini-footer
+                block footer
