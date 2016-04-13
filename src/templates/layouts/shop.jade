@@ -1,0 +1,13 @@
+include ../helpers/mixins
+include ../helpers/variables
+
+html
+    include ../partials/head
+    body
+        .main.red.mdl-layout.mdl-layout--fixed-header.mdl-js-layout
+            include ../partials/header
+
+            main.mdl-layout__content
+                block content
+                    
+        script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaEXrKeI_joVg43tYH-MWItNkXRs6D5Xo&callback=initMap"  async defer)
