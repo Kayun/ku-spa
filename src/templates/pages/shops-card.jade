@@ -1,0 +1,30 @@
+extends ../layouts/shop
+
+block head
+    - var pageTitle = "Shops Card"
+    - var title = "Ку! Мобильные привилегии"
+
+block content
+    .shop
+        .shop-info
+            
+            .shop__title Мой магазин
+            .shop__address Москва, Ленинский проспект, дом 1
+            ul.shop__graph
+                li пн: 08:00-22:00
+                li пн: 08:00-22:00
+                li пн: 08:00-22:00
+                li.active пн: 08:00-22:00
+                li пн: 08:00-22:00
+                li пн: 08:00-22:00
+                li пн: 08:00-22:00
+        
+        #map.shop-map
+        script(type="text/javascript").
+            var map;
+            function initMap() {
+                map = new google.maps.Map(document.getElementById('map'), {
+                    center: {lat: -34.397, lng: 150.644},
+                    zoom: 8
+                });
+            }
