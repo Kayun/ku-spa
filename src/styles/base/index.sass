@@ -1,25 +1,39 @@
 .main
   width: 100%
   overflow: hidden
-  
+
   &.bg-gray
     background-color: $color-bg-gray
-  
+
   &.green
-    
+
     .header
       background-color: $color-green
-  
+
   &.red
-    
+
     .header
       background-color: $color-red
-    
+
 .content
   display: flex
-      
+  transition: transform .3s ease
+  will-change: transform
+
+  &_translate_left
+    transform: translateX(-100%)
+
+  &_translate_right
+    transform: translateX(100%)
+
+  &_duration_0
+    transition-duration: 0s
+
+  &_display_block
+    display: block
+
 .align-center
   text-align: center !important
-  
+
 .width-100p
   width: 100%
