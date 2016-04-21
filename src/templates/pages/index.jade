@@ -6,7 +6,7 @@ mixin list(lis)
             li.mdl-list__item
                 .mdl-list__item-primary-content= li[0]
                 a.mdl-list__item-secondary-action(href= li[1])= li[1]
-        
+
 
 block head
     - var pageTitle = "List"
@@ -27,6 +27,7 @@ block content
         ["Сообщения", "messages.html"],
         ["Карточка сообщения", "messages-card.html"],
         ["Продавцы", "seller.html"],
-        ["Настройки", "settings.html"]
+        ["Настройки", "settings.html"],
+        ["Приложение", "app.html"]
     ])
-        
+
