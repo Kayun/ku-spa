@@ -1,5 +1,8 @@
 'use strict';
 
+const DataFetchError = require('errors/dataFetchError');
+const $ = require('jquery');
+
 module.exports = {
   link(event, router) {
 
@@ -17,5 +20,31 @@ module.exports = {
       Backbone.history.navigate(href, {trigger: true});
     }
 
+  },
+
+  guid() {
+    function s4() {
+      return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
+    }
+    return `${s4()}${s4()}-${s4()}-${s4()}-${s4()}-${s4()}${s4()}${s4()}`;
+  },
+
+  parseData(resp, options) {
+    let parseData = {};
+    try {
+      parseData = $.extend(true, parseData, JSON.parse(resp));
+    } catch (error) {
+      if (error instanceof SyntaxError) {
+        throw new DataFetchError('Синтаксическая ошибка в полученных данных', error);
+      } else {
+        throw error;
+      }
+    }
+
+    return parseData;
+  },
+
+  unixTimestamp() {
+    return Math.round(new Date().getTime() / 1000);
   }
 };
