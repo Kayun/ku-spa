@@ -1,29 +1,41 @@
+'use strict';
+
 const $ = require('jquery');
 const _ = require('underscore');
 const Backbone = require('backbone');
-const Marionette = require('backbone.marionette');
-
-Backbone.LocalStorage = require('backbone.localstorage');
-
-
-require('material-design-lite');
-const namespace = require('namespace');
 const utils = require('utils');
+Backbone.LocalStorage = require('backbone.localstorage');
+Backbone.Wreqr = require('backbone.wreqr');
+const App = require('namespace');
+const CommonController = require('controllers/Common');
+const RouterController = require('controllers/Router');
+const Application = require('Application');
+require('material-design-lite');
 
-const User = require('models/user');
+_.extend(App, new Application());
 
-const App = new Marionette.Application();
-_.extend(App, namespace);
+App
+  .on('before:start', () => {
+    App.setRootLayout();
+  })
+  .on('start', () => {
+    App.root.render();
 
-const user = new User();
+    const controller = new CommonController();
+    controller.router = new RouterController({controller});
 
-// user.save({salt: 'test'});
-user.fetch({
-  success(data, res) {
-  }
-});
+    Backbone.history.start();
+    controller.start();
+  });
+
+localStorage.clear();
+console.log(localStorage);
+
+App.start();
+
 
 $(() => {
+
   const $header = $('.js-header');
   const $content = $('.js-content');
   const $logo = $('.js-logo');
@@ -36,9 +48,6 @@ $(() => {
     const headerBottom = $header.get(0).getBoundingClientRect().bottom;
     const logoBottom = $logo.get(0).getBoundingClientRect().bottom;
     const logoTop = $logo.get(0).getBoundingClientRect().top;
-
-    console.log(headerBottom);
-    console.log(logoTop);
 
     if (headerBottom > logoBottom) {
       $header.css('background-color', newColor);
