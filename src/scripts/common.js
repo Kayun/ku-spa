@@ -28,7 +28,7 @@ App
     controller.start();
   });
 
-localStorage.clear();
+// localStorage.clear();
 console.log(localStorage);
 
 App.start();
