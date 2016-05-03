@@ -9,18 +9,28 @@ const {unixTimestamp} = require('utils');
 module.exports = Backbone.Model.extend({
 
   initialize() {
-    this.set('deviceId', App.Model.User.get('deviceId'));
+    this.deviceId = App.Model.User.get('deviceId');
   },
+
+  idAttribute: 'instance_uid',
 
   urlRoot: '/seller/get_info',
 
   url() {
-    return this.urlRoot;
+    return this.get('base_url') + this.urlRoot;
   },
 
   signature() {
     const timestamp = unixTimestamp();
     return `${this._sha1(timestamp)}\:${timestamp}`;
+  },
+
+  get requestParams() {
+    return {
+      deviceid: this.deviceId,
+      signature: this.signature(),
+      clientid: this.get('client_id')
+    }
   },
 
   _sha1(timestamp) {
