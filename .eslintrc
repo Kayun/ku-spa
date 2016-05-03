@@ -68,7 +68,6 @@
     "max-nested-callbacks": [1, 4],
     "max-params": [0, 3],
     "max-statements": [0, 10],
-    "new-cap": 2,
     "no-array-constructor": 2,
     "no-bitwise": 0,
     "no-caller": 2,
