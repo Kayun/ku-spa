@@ -29,6 +29,7 @@ App
   });
 
 // localStorage.clear();
+
 console.log(localStorage);
 
 App.start();
