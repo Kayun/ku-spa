@@ -17,33 +17,28 @@ module.exports = Marionette.Object.extend({
   globalChanel: Backbone.Wreqr.radio.channel('global'),
 
   initialize() {
-
     this.models = {
       header: new HeaderModel()
     };
-
-    this.collections = {
-      sellers: new SellersCollection()
-    };
-
-    this.collections.sellers.fetch();
-    console.log(this.collections.sellers);
 
     this.subcontrollers = {};
 
     this.globalChanel.reqres.setHandler('navigate:back', this.back);
     this.globalChanel.vent.on('content:load', $.proxy(App.root, 'displayShow', 300));
+    this.globalChanel.vent.on('content:select', $.proxy(this, 'index'));
   },
 
   start() {
+    const that = this;
+
     App.root.showChildView('header', new HeaderView({model: this.models.header}));
     App.root.showChildView('spinner', new SpinnerView());
 
     if (UserModel.isInit()) {
       App.Model.User = new UserModel({id: UserModel.remoteId()});
       App.Model.User.fetch();
-      this.index();
       console.log(App.Model.User);
+      that.index();
     } else {
       Backbone.history.navigate('register', {trigger: true});
     }
@@ -84,19 +79,31 @@ module.exports = Marionette.Object.extend({
   },
 
   index() {
+    const sellers = App.Collection.Sellers || new SellersCollection();
+    sellers.fetch();
+
     delete this.subcontrollers.profile;
     delete this.subcontrollers.register;
 
-    const sellerCount = this.collections.sellers.length;
+    this._index(sellers);
 
-    switch (sellerCount) {
+  },
+
+  _index(collection) {
+    switch (collection.length) {
     case 0:
       Backbone.history.navigate('register/seller', {trigger: true});
       break;
     case 1:
+      Backbone.history.navigate('index', {trigger: true});
       break;
     default:
       break;
     }
+  },
+
+  main() {
+    console.log('main');
+
   }
 });

@@ -15,7 +15,7 @@ module.exports = Marionette.ItemView.extend({
       event.stopPropagation();
       event.preventDefault();
 
-      this.channel.vent.trigger('seller:register');
+      this.channel.vent.trigger('seller:register', $('#invite', this.$el).val());
     });
   },
 

@@ -6,6 +6,6 @@ module.exports = Marionette.AppRouter.extend({
   appRoutes: {
     'register(/:method)': 'register',
     profile: 'profile',
-    '(/)': 'index'
+    index: 'main'
   }
 });

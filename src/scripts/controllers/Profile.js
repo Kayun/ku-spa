@@ -11,7 +11,7 @@ module.exports = Marionette.Object.extend({
 
   initialize() {
     this.view = {
-      Profile: ProfileView
+      profile: new ProfileView()
     };
 
     this.globalChanel.vent.on('profile:send', $.proxy(this, 'send'));
@@ -22,33 +22,39 @@ module.exports = Marionette.Object.extend({
   send() {
 
     const data = this.view.profile.$el.serialize();
+
     const getData = callback => {
       App.Model.User.getProfile().then(callback);
     };
 
     App.Model.User.setProfile(data).then(() => {
-      getData(this._saveData);
+      getData($.proxy(this, '_saveData'));
     });
   },
 
   _saveData(data) {
     const {data: {user}, success} = parseData(data);
+    const that = this;
 
     if (success) {
       App.Model.User.set(user);
-      App.Model.User.save({
-        success(model) {
-          console.log(model);
+
+      App.Model.User.save(user, {
+        success() {
+          that.globalChanel.vent.trigger('content:select');
         }
       });
-      Backbone.history.navigate('/', {trigger: true});
     } else {
       // error
     }
   },
 
   index() {
-    App.root.showChildView('content', new this.view.Profile());
+    if (!this.view.profile) {
+      this.view.profile = new ProfileView();
+    }
+
+    App.root.showChildView('content', this.view.profile);
   }
 
 });
