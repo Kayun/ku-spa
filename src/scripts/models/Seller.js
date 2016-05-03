@@ -30,7 +30,7 @@ module.exports = Backbone.Model.extend({
       deviceid: this.deviceId,
       signature: this.signature(),
       clientid: this.get('client_id')
-    }
+    };
   },
 
   _sha1(timestamp) {
