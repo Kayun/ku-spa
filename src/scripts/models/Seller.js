@@ -25,7 +25,7 @@ module.exports = Backbone.Model.extend({
     return `${this._sha1(timestamp)}\:${timestamp}`;
   },
 
-  get requestParams() {
+  requestParams() {
     return {
       deviceid: this.deviceId,
       signature: this.signature(),
